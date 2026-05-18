@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Korean Etiquette</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container glass">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="logo">
+                <i class="fa-solid fa-seedling"></i>
+                <h1>K-Etiquette</h1>
+            </div>
+            <ul class="nav-links">
+                <li class="nav-item active" data-target="dashboard">
+                    <i class="fa-solid fa-house"></i>
+                    <span>Dashboard</span>
+                </li>
+                <li class="nav-item" data-target="calculator">
+                    <i class="fa-solid fa-calculator"></i>
+                    <span>Title Calculator</span>
+                </li>
+                <li class="nav-item" data-target="guides">
+                    <i class="fa-solid fa-book-open"></i>
+                    <span>Manner Guides</span>
+                </li>
+                <li class="nav-item" data-target="practice">
+                    <i class="fa-solid fa-comments"></i>
+                    <span>Practice</span>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="top-header">
+                <h2 id="page-title">Dashboard</h2>
+                <div class="user-profile">
+                    <img src="https://ui-avatars.com/api/?name=User&background=random" alt="User Profile">
+                </div>
+            </header>
+
+            <!-- Views -->
+            <div class="views-container">
+                <!-- Dashboard View -->
+                <section id="dashboard" class="view active-view">
+                    <div class="welcome-banner glass-card">
+                        <h3>Welcome to Learning Korean Etiquette! 🎉</h3>
+                        <p>Your journey to mastering Korean culture and social interactions starts here.</p>
+                    </div>
+                    <div class="dashboard-cards">
+                        <div class="dash-card glass-card" onclick="app.navigateTo('calculator')">
+                            <i class="fa-solid fa-calculator card-icon"></i>
+                            <h4>Title Calculator</h4>
+                            <p>Find the right titles & endings</p>
+                        </div>
+                        <div class="dash-card glass-card" onclick="app.navigateTo('guides')">
+                            <i class="fa-solid fa-utensils card-icon"></i>
+                            <h4>Dining & Drinking</h4>
+                            <p>Learn essential manners</p>
+                        </div>
+                        <div class="dash-card glass-card" onclick="app.navigateTo('practice')">
+                            <i class="fa-solid fa-users card-icon"></i>
+                            <h4>Scenario Practice</h4>
+                            <p>Practice with virtual friends</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Title Calculator View -->
+                <section id="calculator" class="view">
+                    <div class="glass-card full-width">
+                        <h3>Relationship Title & Ending Calculator</h3>
+                        <p class="subtitle">Select the relationship to figure out what to call them and how to end your sentences.</p>
+                        
+                        <div class="calc-form">
+                            <div class="form-group">
+                                <label>Who are you talking to?</label>
+                                <select id="calc-role">
+                                    <option value="friend">Friend</option>
+                                    <option value="senior">University Senior (선배)</option>
+                                    <option value="professor">Professor (교수님)</option>
+                                    <option value="boss">Workplace Boss / Senior</option>
+                                    <option value="parents">Friend's Parents</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Age Difference?</label>
+                                <select id="calc-age">
+                                    <option value="same">Same Age</option>
+                                    <option value="older">Older than me</option>
+                                    <option value="younger">Younger than me</option>
+                                </select>
+                            </div>
+                            <button id="calc-btn" class="btn-primary">Calculate</button>
+                        </div>
+
+                        <div id="calc-result" class="result-box hidden">
+                            <!-- Results injected here -->
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Manner Guides View -->
+                <section id="guides" class="view">
+                    <div class="tabs">
+                        <button class="tab-btn active" data-guide="dining">Dining Etiquette</button>
+                        <button class="tab-btn" data-guide="drinking">Drinking Etiquette</button>
+                    </div>
+                    
+                    <div id="guide-content" class="guide-container glass-card">
+                        <!-- Guide content injected here -->
+                    </div>
+                </section>
+
+                <!-- Practice View -->
+                <section id="practice" class="view">
+                    <div class="practice-container">
+                        <div class="scenario-selector glass-card">
+                            <h3>Choose Scenario</h3>
+                            <ul id="scenario-list">
+                                <!-- Scenarios injected here -->
+                            </ul>
+                        </div>
+                        <div class="chat-interface glass-card">
+                            <div class="chat-header">
+                                <span id="chat-partner-name">Select a scenario...</span>
+                            </div>
+                            <div id="chat-messages" class="chat-messages">
+                                <!-- Chat bubbles -->
+                            </div>
+                            <div class="chat-input-area">
+                                <div id="options-container" class="options-container">
+                                    <!-- User choices -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
